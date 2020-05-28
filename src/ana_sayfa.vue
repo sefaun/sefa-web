@@ -9,12 +9,12 @@
       <div class="logo-1">
         <img src="./img/sefa.png" alt="SEFA ÜN" class="profil" />
         <div class="aciklama">
-          <h4 class="detay mt-5">SEFA ÜN</h4>
+          <h4 class="detay art-t">SEFA ÜN</h4>
           <hr style="border-top: 1px solid deeppink;" />
-          <h4 class="detay mt-3 mb-3">Çevre Mühendisi</h4>
+          <h4 class="detay mt-2 mb-2">Çevre Mühendisi</h4>
           <h4 class="detay">Web and Mobil Software Developer</h4>
           <div class="container">
-            <div class="row mt-4 justify-content-center text-center">
+            <div class="row mt-2 justify-content-center text-center">
               <div class="col-lg-12">
                 <a href="https://tr.linkedin.com/in/sefa-%C3%BCn-856034172" target="_blank">
                   <img class="mr-3 linkler" src="./img/linkedin.png" alt />
@@ -33,6 +33,15 @@
                 </a>
               </div>
             </div>
+            <br />
+            <p class="ulas">
+              Sitenin Bütün Kodlarına
+              <a
+                style="text-decoration: underline; color: deeppink;"
+                href="https://github.com/fesa6654/sefa-web"
+                target="_blank"
+              >Github</a>'dan Ulaşabilirsiniz.
+            </p>
           </div>
         </div>
       </div>
@@ -124,7 +133,7 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h5>
+              <h5 class="animations">
                 - Lisans eğitimim sırasında yazılıma olan ilgimden dolayı ilk başlarda
                 <a
                   style="color: deepskyblue;"
@@ -132,17 +141,17 @@
                 <a style="color: deepskyblue;">C#</a> yazılım dillerini kullanarak projeler geliştirdim.
               </h5>
               <br />
-              <h5>
+              <h5 class="animations">
                 - Lisans Eğitimimin son yılında Aksaray Brisa Bridgestone Sabancı Lastik Fabrikası'da tam zamanlı olarak 9 ay staj yaptım. 9 Aylık staj
                 dönemimde yazılımın hayatımızda artık daha da önemli olduğunu anladım.
               </h5>
               <br />
-              <h5>
+              <h5 class="animations">
                 - 4 senelik lisans eğitimimi Aksaray Üniversitesi Çevre Mühendisliği Bölümünden sınıf 2. olarak 3.53 GNO ile 2019'un haziran ayında
                 tamamladım.
               </h5>
               <br />
-              <h5>
+              <h5 class="animations">
                 - Lisans Eğitimim sona erdikten sonra önüme çıkan projeler beni web yazılımlarına yönlendirdi. İlk başlarda
                 <a
                   style="color: deepskyblue;"
@@ -157,7 +166,7 @@
                 <a style="color: deepskyblue;">Mysql</a> yazılım dilleri ve Database'de kendimi geliştirdim.
               </h5>
               <br />
-              <h5>
+              <h5 class="animations">
                 - Geliştirdiğim web projelerinde artık mobil uygulamalara da ihtiyacım olmaya başladı. Bu yüzden
                 <a
                   style="color: deepskyblue;"
@@ -167,15 +176,18 @@
                 <a style="color: deepskyblue;">IOS</a>'da çalışabilen mobil uygulamalar geliştirmeye başladım.
               </h5>
               <br />
-              <h5>- Şuanda hala Web ve Mobil uygulamalarında projeler geliştirmekteyim. Geliştirdiğim projeler mevcuttur.</h5>
+              <h5
+                class="animations"
+              >- Şuanda hala Web ve Mobil uygulamalarında projeler geliştirmekteyim. Geliştirdiğim projeler mevcuttur.</h5>
               <br />
-              <h5>
+              <h5 class="animations">
                 - Yazılım dışında
                 <a style="color: deepskyblue;">AutoCad</a> ve
                 <a style="color: deepskyblue;">SolidWorks</a> tecrübem de bulunmaktadır.
               </h5>
               <br />
               <h5
+                class="animations"
                 style="color: deeppink;"
               >- Benimle iletişime geçmek ve yaptığım projelerden bilgi almak için sayfada bulunan e-mail gönderme yerinden bana e-mail gönderebilirsiniz.</h5>
             </div>
@@ -258,7 +270,7 @@
             </div>
           </div>
           <div class="col-lg-4 mb-2">
-            <div class="card">
+            <div class="card reveal">
               <div class="card-body renk44">
                 <h3 style="color: deeppink;" class="renk3 text-center">E-Mail Gönder</h3>
                 <hr />
@@ -356,13 +368,13 @@
           <br />
           <div class="row footer-font pt-4 justify-content-center text-center">
             <div class="col-lg-6">
-              <h5 style="color: deepskyblue;">
+              <h5 class="animat" style="color: deepskyblue;">
                 Telefon:
                 <a style="color: white;">+90 533 225 21 09</a>
               </h5>
             </div>
             <div class="col-lg-6">
-              <h5 style="color: deepskyblue;">
+              <h5 class="animat" style="color: deepskyblue;">
                 E-mail Adresi:
                 <a style="color: white;">sefaun6654@hotmail.com</a>
               </h5>
@@ -372,7 +384,7 @@
           <div class="row pt-3 pb-3 font-1 text-center align-items-center justify-content-center">
             <div class="col-lg-12" style="color: white;">
               Copyrigth © {{year}} Designed by
-              <a style="color: deepskyblue;">SEFA ÜN</a>
+              <a class="animat" style="color: deepskyblue;">SEFA ÜN</a>
             </div>
           </div>
         </div>
@@ -399,6 +411,66 @@ export default {
       },
       sayfa: 0
     };
+  },
+  mounted() {
+    window.sr = new ScrollReveal();
+    /*
+rotate: {x:30, y:50, z:40}
+delay: 1000
+*/
+    sr.reveal(".profil", {
+      duration: 1000,
+      scale: 0.5
+    });
+
+    sr.reveal(".linkler", {
+      duration: 1000,
+      distance: "100px",
+      origin: "right"
+    });
+
+    sr.reveal(".animations", {
+      interval: 300,
+      distance: "100px",
+      origin: "right"
+    });
+
+    sr.reveal(".logos", {
+      interval: 100,
+      distance: "100px",
+      origin: "bottom",
+      opacity: 0
+    });
+
+    sr.reveal(".reveal", {
+      duration: 1500,
+      distance: "100px",
+      origin: "bottom",
+      opacity: 0
+    });
+
+    sr.reveal(".animasyon", {
+      duration: 500,
+      interval: 1000,
+      distance: "100px",
+      origin: "left",
+      opacity: 0
+    });
+
+    sr.reveal(".animasyon-1", {
+      duration: 500,
+      interval: 500,
+      distance: "100px",
+      origin: "right",
+      opacity: 0
+    });
+
+    sr.reveal(".animat", {
+      duration: 500,
+      interval: 300,
+      distance: "10px",
+      origin: "right"
+    });
   },
   created() {
     window.addEventListener("resize", this.handleResize);
@@ -552,11 +624,22 @@ export default {
   z-index: 10000;
 }
 
+.art-t {
+  margin-top: 100px;
+}
+
 .linkler {
   position: relative;
   width: 40px;
   margin-top: 10px;
   z-index: 2000000;
+}
+
+.ulas {
+  position: relative;
+  z-index: 5000000;
+  color: deepskyblue;
+  font-size: 16px;
 }
 
 .slayt-baslik {
