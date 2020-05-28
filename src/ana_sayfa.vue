@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <div class="ust-resimler">
+      <div id="ust" class="ust-resimler">
         <div class="perde"></div>
         <img class="d-none d-lg-block" src="./img/asil.png" alt />
         <img class="d-lg-none d-block" src="./img/kucuk.png" alt />
@@ -191,6 +191,42 @@
                 style="color: deeppink;"
               >- Benimle iletişime geçmek ve yaptığım projelerden bilgi almak için sayfada bulunan e-mail gönderme yerinden bana e-mail gönderebilirsiniz.</h5>
             </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-12">
+            <h2 style="color: deeppink;">NODE.JS İLE KULLANDIĞIM BAZI MODÜLLER</h2>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <br />
+      <div class="container-fluid">
+        <div
+          class="row align-items-center justify-content-lg-around justify-content-center text-center"
+        >
+          <div class="col-lg-4">
+            <h5 class="animations">- express</h5>
+            <h5 class="animations">- nodemon</h5>
+            <h5 class="animations">- bcrypt</h5>
+            <h5 class="animations">- jsonwebtoken</h5>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="animations">- dotenv</h5>
+            <h5 class="animations">- crypto-js</h5>
+            <h5 class="animations">- mysql</h5>
+            <h5 class="animations">- node-cache</h5>
+          </div>
+          <div class="col-lg-4">
+            <h5 class="animations">- joi</h5>
+            <h5 class="animations">- mkdirp</h5>
+            <h5 class="animations">- nodemailer</h5>
+            <h5 class="animations">- axios</h5>
           </div>
         </div>
       </div>
@@ -390,6 +426,11 @@
         </div>
       </div>
     </div>
+    <div class="go-ust">
+      <a href="#ust" style="color: deepskyblue; outline: none;">
+        <vs-button radius color="danger" type="gradient" icon="keyboard_arrow_up"></vs-button>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -430,7 +471,7 @@ delay: 1000
     });
 
     sr.reveal(".animations", {
-      interval: 300,
+      duration: 1000,
       distance: "100px",
       origin: "right"
     });
@@ -720,5 +761,12 @@ delay: 1000
 
 .corbus {
   width: 40%;
+}
+
+.go-ust {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90000000;
 }
 </style>
