@@ -384,7 +384,7 @@
           <div class="row pt-3 pb-3 font-1 text-center align-items-center justify-content-center">
             <div class="col-lg-12" style="color: white;">
               Copyrigth © {{year}} Designed by
-              <a class="animat" style="color: deepskyblue;">SEFA ÜN</a>
+              <a style="color: deepskyblue;">SEFA ÜN</a>
             </div>
           </div>
         </div>
