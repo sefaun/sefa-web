@@ -3,16 +3,34 @@
     <div>
       <div id="ust" class="ust-resimler">
         <div class="perde"></div>
-        <img class="d-none d-lg-block" src="./img/asil.png" alt />
+        <img class="d-none d-lg-block as" src="./img/asil.png" alt />
         <img class="d-lg-none d-block" src="./img/kucuk.png" alt />
       </div>
       <div class="logo-1">
+        <div class="container menum">
+          <div
+            class="row justify-content-lg-around justify-content-center align-items-center text-center"
+          >
+            <div class="col" :style="{display: girisler}">
+              <a @click="kayit_page()" class="butonlar">KAYIT OL</a>
+            </div>
+            <div class="col">
+              <a @click="makaleler_page()" class="butonlar">MAKALELER</a>
+            </div>
+            <div class="col" :style="{display: cikislar}">
+              <a @click="makaleekle_page()" class="butonlar">MAKALE EKLE</a>
+            </div>
+            <div class="col">
+              <a @click="cikis()" :style="{display: cikislar}" class="butonlar">ÇIKIŞ</a>
+              <a @click="giris()" :style="{display: girisler}" class="butonlar">GİRİŞ</a>
+            </div>
+          </div>
+        </div>
         <img src="./img/sefa.png" alt="SEFA ÜN" class="profil" />
         <div class="aciklama">
           <h4 class="detay art-t">SEFA ÜN</h4>
+          <h4 class="detay">Front-End, Back-End and Mobil Software Developer</h4>
           <hr style="border-top: 1px solid deeppink;" />
-          <h4 class="detay mt-2 mb-2">Çevre Mühendisi</h4>
-          <h4 class="detay">Web and Mobil Software Developer</h4>
           <div class="container">
             <div class="row mt-2 justify-content-center text-center">
               <div class="col-lg-12">
@@ -450,9 +468,12 @@ export default {
         eposta: "",
         icerik: ""
       },
-      sayfa: 0
+      girisler: "block",
+      cikislar: "none",
+      kontrol_token: null
     };
   },
+  computed: {},
   mounted() {
     window.sr = new ScrollReveal();
     /*
@@ -467,13 +488,13 @@ delay: 1000
     sr.reveal(".linkler", {
       duration: 1000,
       distance: "100px",
-      origin: "right"
+      origin: "top"
     });
 
     sr.reveal(".animations", {
       duration: 1000,
       distance: "100px",
-      origin: "right"
+      origin: "top"
     });
 
     sr.reveal(".logos", {
@@ -494,7 +515,7 @@ delay: 1000
       duration: 500,
       interval: 1000,
       distance: "100px",
-      origin: "left",
+      origin: "top",
       opacity: 0
     });
 
@@ -502,7 +523,7 @@ delay: 1000
       duration: 500,
       interval: 500,
       distance: "100px",
-      origin: "right",
+      origin: "top",
       opacity: 0
     });
 
@@ -510,12 +531,8 @@ delay: 1000
       duration: 500,
       interval: 300,
       distance: "10px",
-      origin: "right"
+      origin: "bottom"
     });
-  },
-  created() {
-    window.addEventListener("resize", this.handleResize);
-    this.handleResize();
   },
   destroyed() {
     window.removeEventListener("resize", this.handleResize);
@@ -524,6 +541,16 @@ delay: 1000
     handleResize() {
       this.window.width = window.innerWidth;
       this.window.height = window.innerHeight;
+    },
+    deneme() {
+      this.kontrol_token = localStorage.getItem("token");
+      if (this.kontrol_token != null) {
+        this.cikislar = "block";
+        this.girisler = "none";
+      } else {
+        this.cikislar = "none";
+        this.girisler = "block";
+      }
     },
     mail_gonder() {
       if (
@@ -570,7 +597,28 @@ delay: 1000
         .getemail()
         .then(response => {})
         .catch(err => {});
+    },
+    giris() {
+      this.$router.push("/giris");
+    },
+    kayit_page() {
+      this.$router.push("/kayit");
+    },
+    makaleekle_page() {
+      this.$router.push("/makale-ekle");
+    },
+    makaleler_page() {
+      this.$router.push("/makaleler");
+    },
+    cikis() {
+      localStorage.clear();
+      window.location.href = "/";
     }
+  },
+  created() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+    this.deneme();
   }
 };
 </script>
@@ -580,8 +628,6 @@ delay: 1000
   font-family: "Oswald", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*text-align: center;*/
-  /*color: #2c3e50;*/
 }
 
 .ust-resimler {
@@ -605,7 +651,7 @@ delay: 1000
   0% {
     background-image: linear-gradient(
       to bottom,
-      rgba(255, 20, 145, 0.408),
+      rgba(255, 20, 145, 0.51),
       rgba(255, 20, 145, 0.095)
     );
     opacity: 1;
@@ -613,7 +659,7 @@ delay: 1000
   50% {
     background-image: linear-gradient(
       to bottom,
-      rgba(255, 20, 145, 0.408),
+      rgba(255, 20, 145, 0.51),
       rgba(255, 20, 145, 0.095)
     );
     opacity: 0.5;
@@ -621,7 +667,7 @@ delay: 1000
   100% {
     background-image: linear-gradient(
       to bottom,
-      rgba(255, 20, 145, 0.408),
+      rgba(255, 20, 145, 0.51),
       rgba(255, 20, 145, 0.095)
     );
     opacity: 1;
@@ -633,6 +679,30 @@ delay: 1000
   width: 100%;
   min-width: 100%;
   height: 500px;
+}
+
+.menum {
+  position: absolute;
+  top: 10px;
+  background-color: rgba(0, 191, 255, 0.476);
+  box-shadow: 0 0 25px deepskyblue;
+  border-radius: 10px;
+  z-index: 900000000;
+}
+
+.butonlar {
+  padding: 5px 10px;
+  color: deeppink !important;
+  transition: 0.3s;
+}
+
+.butonlar:hover {
+  box-shadow: 0 0 25px deepskyblue;
+  background-color: deepskyblue;
+  text-decoration: none;
+  color: rgb(0, 66, 88) !important;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .logo-1 {
@@ -651,7 +721,7 @@ delay: 1000
   min-width: 150px;
   border-radius: 200px;
   border: 2px solid deepskyblue;
-  top: 30px;
+  top: 90px;
   z-index: 5500;
 }
 
@@ -666,7 +736,7 @@ delay: 1000
 }
 
 .art-t {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .linkler {
